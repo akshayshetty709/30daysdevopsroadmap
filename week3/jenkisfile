@@ -1,0 +1,65 @@
+pipeline {
+    agent any
+ 
+    stages {
+        stage('Clone Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/sridhar2822/simple-node-project.git'
+            }
+        }
+ 
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t simple-node-app .'
+            }
+        }
+ 
+        stage('Stop Old Container') {
+            steps {
+                sh 'docker rm -f simple-node-container || true'
+            }
+        }
+ 
+        stage('Run Container') {
+            steps {
+                sh 'docker run -d -p 3000:3000 --name simple-node-container simple-node-app'
+            }
+        }
+    }
+}
+pipeline {
+    agent any
+ 
+    triggers {
+        githubPush()
+    }
+ 
+    stages {
+ 
+        stage('Clone Code') {
+            steps {
+                git 'https://github.com/sridhar2822/react-devops-project.git'
+            }
+        }
+ 
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t react-devops-app .'
+            }
+        }
+ 
+        stage('Stop Old Container') {
+            steps {
+                sh 'docker stop react-container || true'
+                sh 'docker rm react-container || true'
+            }
+        }
+ 
+        stage('Run New Container') {
+            steps {
+                sh 'docker run -d -p 3000:3000 --name react-container react-devops-app'
+            }
+        }
+ 
+    }
+}
