@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'NAME', defaultValue: 'User', description: 'Enter your name')
+        choice(name: 'ENV', choices: ['dev','test','prod'], description: 'Select environment')
+    }
+
+    stages {
+        stage('Print Info') {
+            steps {
+                echo "User: ${params.NAME}"
+                echo "Environment: ${params.ENV}"
+            }
+        }
+    }
+}
