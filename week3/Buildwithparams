@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'NAME', defaultValue: 'DevOps', description: 'Enter your name')
+    }
+
+    stages {
+        stage('Print Name') {
+            steps {
+                echo "Hello ${params.NAME}"
+            }
+        }
+    }
+}
