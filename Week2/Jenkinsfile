@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Enter Git branch')
+        choice(name: 'ENVIRONMENT', choices: ['dev','test','prod'], description: 'Select deployment environment')
+        string(name: 'IMAGE_TAG', defaultValue: '1.0', description: 'Enter Docker image version')
+    }
+
+    stages {
+
+        stage('Checkout Code') {
+            steps {
+                echo "Checking out branch: ${params.BRANCH_NAME}"
+            }
+        }
+
+        stage('Build Application') {
+            steps {
+                echo "Building application..."
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                echo "Building Docker Image with tag: ${params.IMAGE_TAG}"
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying to environment: ${params.ENVIRONMENT}"
+            }
+        }
+
+    }
+}
