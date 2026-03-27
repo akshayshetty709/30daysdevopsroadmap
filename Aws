@@ -7,3 +7,7 @@ aws eks associate-access-policy --cluster-name node-app-cluster \
     --principal-arn arn:aws:iam::751101364131:root \
     --policy-arn arn:aws:iam::aws:policy/AmazonEKSClusterAdminPolicy \
     --access-scope type=cluster
+aws eks associate-access-policy --cluster-name node-app-cluster \
+    --principal-arn arn:aws:iam::751101364131:root \
+    --policy-arn arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy \
+    --access-scope type=cluster
