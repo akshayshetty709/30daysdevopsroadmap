@@ -31,3 +31,7 @@ aws iam attach-role-policy \
     --role-name AmazonEKSLoadBalancerControllerRole
 aws iam list-policies --scope Local --query 'Policies[*].[PolicyName, Arn]' --output table
 kubectl patch ingress mainlb -p '{"metadata":{"finalizers":null}}' --type=merge
+
+aws iam create-policy \
+    --policy-name AWSLoadBalancerControllerIAMPolicyV2 \
+    --policy-document file://iam_policy.json
