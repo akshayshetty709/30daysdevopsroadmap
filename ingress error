@@ -35,3 +35,4 @@ kubectl patch ingress mainlb -p '{"metadata":{"finalizers":null}}' --type=merge
 aws iam create-policy \
     --policy-name AWSLoadBalancerControllerIAMPolicyV2 \
     --policy-document file://iam_policy.json
+kubectl logs -n kube-system -l app.kubernetes.io/name=aws-load-balancer-controller --tail=50
