@@ -18,3 +18,6 @@ aws iam create-policy-version \
     --set-as-default
 kubectl rollout restart deployment aws-load-balancer-controller -n kube-system
 kubectl rollout restart deployment aws-load-balancer-controller -n kube-system
+aws iam attach-role-policy \
+    --policy-arn arn:aws:iam::751101364131:policy/AWSLoadBalancerControllerIAMPolicy \
+    --role-name AmazonEKSLoadBalancerControllerRole
