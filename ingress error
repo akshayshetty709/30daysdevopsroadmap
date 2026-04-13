@@ -21,3 +21,4 @@ kubectl rollout restart deployment aws-load-balancer-controller -n kube-system
 aws iam attach-role-policy \
     --policy-arn arn:aws:iam::751101364131:policy/AWSLoadBalancerControllerIAMPolicy \
     --role-name AmazonEKSLoadBalancerControllerRole
+aws iam list-policies --scope Local --query 'Policies[*].[PolicyName, Arn]' --output table
