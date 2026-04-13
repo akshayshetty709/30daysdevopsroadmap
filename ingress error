@@ -10,3 +10,11 @@ Events:
   Warning  FailedDeployModel   16m                 ingress  Failed deploy model due to operation error Elastic Load Balancing v2: DescribeListenerAttributes, https response error StatusCode: 403, RequestID: 9a1b495a-c637-4269-aa87-94f6c97c843e, api error AccessDenied: User: arn:aws:sts::751101364131:assumed-role/AmazonEKSLoadBalancerControllerRole/1776059138694722655 is not authorized to perform: elasticloadbalancing:DescribeListenerAttributes because no identity-based policy allows the elasticloadbalancing:DescribeListenerAttributes action
   Warning  FailedDeployModel   13m                 ingress  Failed deploy model due to operation error Elastic Load Balancing v2: DescribeListenerAttributes, https response error StatusCode: 403, RequestID: f46d6b80-853b-480e-b9ba-6c59e76b7806, api error AccessDenied: User: arn:aws:sts::751101364131:assumed-role/AmazonEKSLoadBalancerControllerRole/1776059138694722655 is not authorized to perform: elasticloadbalancing:DescribeListenerAttributes because no identity-based policy allows the elasticloadbalancing:DescribeListenerAttributes action
   Warning  FailedDeployModel   7m45s               ingress  Failed deploy model due to operation error Elastic Load Balancing v2: DescribeListenerAttributes, https response error StatusCode: 403, RequestID: 1ac33cb5-9500-47ab-8a56-f55cabc52c5c, api error AccessDenied: User: arn:aws:sts::751101364131:assumed-role/AmazonEKSLoadBalancerControllerRole/1776059138694722655 is not authorized to perform: elasticloadbalancing:DescribeListenerAttributes because no identity-based policy allows the elasticloadbalancing:DescribeListenerAttributes action
+
+curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.7.2/docs/install/iam_policy.json
+aws iam create-policy-version \
+    --policy-arn arn:aws:iam::751101364131:policy/<YourPolicyName> \
+    --policy-document file://iam_policy.json \
+    --set-as-default
+kubectl rollout restart deployment aws-load-balancer-controller -n kube-system
+kubectl rollout restart deployment aws-load-balancer-controller -n kube-system
