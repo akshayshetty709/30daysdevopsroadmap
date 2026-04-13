@@ -45,3 +45,14 @@ aws iam list-attached-role-policies --role-name AmazonEKSLoadBalancerControllerR
 aws iam attach-role-policy \
     --role-name AmazonEKSLoadBalancerControllerRole \
     --policy-arn arn:aws:iam::<YOUR_ACCOUNT_ID>:policy/AWSLoadBalancerControllerIAMPolicy
+aws iam put-role-policy \
+  --role-name AmazonEKSLoadBalancerControllerRole \
+  --policy-name ELBDescribeListenerAttributes \
+  --policy-document '{
+    "Version": "2012-10-17",
+    "Statement": [{
+      "Effect": "Allow",
+      "Action": ["elasticloadbalancing:DescribeListenerAttributes"],
+      "Resource": "*"
+    }]
+  }'
