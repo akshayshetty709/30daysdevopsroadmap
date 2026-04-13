@@ -36,3 +36,4 @@ aws iam create-policy \
     --policy-name AWSLoadBalancerControllerIAMPolicyV2 \
     --policy-document file://iam_policy.json
 kubectl logs -n kube-system -l app.kubernetes.io/name=aws-load-balancer-controller --tail=50
+curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/main/docs/install/iam_policy.json
