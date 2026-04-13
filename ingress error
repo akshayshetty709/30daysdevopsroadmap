@@ -41,3 +41,7 @@ aws iam create-policy-version \
     --policy-arn arn:aws:iam::<YOUR_ACCOUNT_ID>:policy/AWSLoadBalancerControllerIAMPolicy \
     --policy-document file://iam_policy.json \
     --set-as-default
+aws iam list-attached-role-policies --role-name AmazonEKSLoadBalancerControllerRole
+aws iam attach-role-policy \
+    --role-name AmazonEKSLoadBalancerControllerRole \
+    --policy-arn arn:aws:iam::<YOUR_ACCOUNT_ID>:policy/AWSLoadBalancerControllerIAMPolicy
