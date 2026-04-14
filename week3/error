@@ -1,0 +1,11 @@
+E0414 12:38:09.472528   68587 start.go:956] failed to get current CoreDNS ConfigMap: /bin/bash -c "sudo /var/lib/minikube/binaries/v1.35.1/kubectl --kubeconfig=/var/lib/minikube/kubeconfig -n kube-system get configmap coredns -o yaml": Process exited with status 1
+stdout:
+
+stderr:
+E0414 12:38:09.465898    1618 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://localhost:8443/api?timeout=32s\": dial tcp [::1]:8443: connect: connection refused"
+E0414 12:38:09.466346    1618 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://localhost:8443/api?timeout=32s\": dial tcp [::1]:8443: connect: connection refused"
+E0414 12:38:09.467808    1618 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://localhost:8443/api?timeout=32s\": dial tcp [::1]:8443: connect: connection refused"
+E0414 12:38:09.467972    1618 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://localhost:8443/api?timeout=32s\": dial tcp [::1]:8443: connect: connection refused"
+E0414 12:38:09.469430    1618 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://localhost:8443/api?timeout=32s\": dial tcp [::1]:8443: connect: connection refused"
+The connection to the server localhost:8443 was refused - did you specify the right host or port?
+Failed to inject host.minikube.internal into CoreDNS, this will limit the pods access to the host IPE0414 12:38:09.474518   68587 start.go:162] Unable to scale down deployment "coredns" in namespace "kube-system" to 1 replica: non-retryable failure while getting "coredns" deployment scale: Get "https://192.168.58.2:8443/apis/apps/v1/namespaces/kube-system/deployments/coredns/scale": dial tcp 192.168.58.2:8443: connect: connection refused
