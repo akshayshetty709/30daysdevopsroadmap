@@ -1,0 +1,10 @@
+Type     Reason     Age                 From               Message
+  ----     ------     ----                ----               -------
+  Normal   Scheduled  14m                 default-scheduler  Successfully assigned kubernetes-dashboard/kubernetes-dashboard-b84665fb8-ftv6x to minikube
+  Normal   Pulling    14m                 kubelet            spec.containers{kubernetes-dashboard}: Pulling image "docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93"
+  Normal   Pulled     13m                 kubelet            spec.containers{kubernetes-dashboard}: Successfully pulled image "docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93" in 23.347s (23.347s including waiting). Image size: 245710051 bytes.
+  Warning  Unhealthy  12m                 kubelet            spec.containers{kubernetes-dashboard}: Liveness probe failed: Get "http://10.244.0.3:9090/": dial tcp 10.244.0.3:9090: connect: connection refused
+  Normal   Created    5m5s (x7 over 13m)  kubelet            spec.containers{kubernetes-dashboard}: Container created
+  Normal   Started    5m5s (x7 over 13m)  kubelet            spec.containers{kubernetes-dashboard}: Container started
+  Normal   Pulled     5m5s (x6 over 13m)  kubelet            spec.containers{kubernetes-dashboard}: Container image "docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93" already present on machine and can be accessed by the pod
+  Warning  BackOff    51s (x16 over 12m)  kubelet            spec.containers{kubernetes-dashboard}: Back-off restarting failed container kubernetes-dashboard in pod kubernetes-dashboard-b84665fb8-ftv6x_kubernetes-dashboard(f4098293-f6c1-4809-9d14-3b2302e883dc)
