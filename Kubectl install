@@ -1,0 +1,6 @@
+# Download the latest stable binary
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+# Make it executable and move it to your path
+chmod +x ./kubectl
+sudo mv ./kubectl $(which kubectl)
