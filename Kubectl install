@@ -6,3 +6,13 @@ chmod +x ./kubectl
 sudo mv ./kubectl $(which kubectl)
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+# 1. Download the binary
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+# 2. Install it
+# 'install' combines chmod +x and mv into one clean command
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# 3. Verify
+kubectl version --client
