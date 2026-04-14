@@ -4,3 +4,5 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 # Make it executable and move it to your path
 chmod +x ./kubectl
 sudo mv ./kubectl $(which kubectl)
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
