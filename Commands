@@ -12,3 +12,7 @@ sudo cp $(which minikube) /usr/local/bin/minikube
 
 # Restart பண்ணு
 sudo systemctl restart jenkins
+sudo mkdir -p /var/lib/jenkins/.minikube
+sudo cp -r /home/ubuntu/.minikube/* /var/lib/jenkins/.minikube/
+
+sudo chown -R jenkins:jenkins /var/lib/jenkins/.minikube
