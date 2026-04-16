@@ -16,3 +16,4 @@ sudo mkdir -p /var/lib/jenkins/.minikube
 sudo cp -r /home/ubuntu/.minikube/* /var/lib/jenkins/.minikube/
 
 sudo chown -R jenkins:jenkins /var/lib/jenkins/.minikube
+sudo sed -i 's|/home/ubuntu/.minikube|/var/lib/jenkins/.minikube|g' /var/lib/jenkins/.kube/config
