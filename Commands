@@ -1,0 +1,14 @@
+# Jenkins user-ஐ docker group-ல add பண்ணு
+sudo usermod -aG docker jenkins
+
+# kubectl jenkins-க்கு கொடு
+sudo cp ~/.kube/config /var/lib/jenkins/.kube/config
+sudo mkdir -p /var/lib/jenkins/.kube
+sudo cp ~/.kube/config /var/lib/jenkins/.kube/config
+sudo chown -R jenkins:jenkins /var/lib/jenkins/.kube
+
+# Minikube binary கொடு
+sudo cp $(which minikube) /usr/local/bin/minikube
+
+# Restart பண்ணு
+sudo systemctl restart jenkins
