@@ -1,74 +1,145 @@
-org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: b9a59084-dafb-400e-935c-15b5e12b2b78
-java.lang.NoSuchMethodError: No such DSL method 'sshagent' found among steps [archive, bat, build, catchError, checkout, deleteDir, dir, dockerFingerprintFrom, dockerFingerprintRun, echo, emailext, emailextrecipients, envVarsForTool, error, fileExists, findBuildScans, getContext, git, hideFromView, input, isUnix, junit, library, libraryResource, load, mail, milestone, node, parallel, powershell, properties, publishChecks, pwd, pwsh, readFile, readScmFile, readTrusted, resolveScm, retry, script, sh, sleep, stage, stash, step, timeout, timestamps, tm, tool, unarchive, unstable, unstash, validateDeclarativePipeline, waitForBuild, waitForQualityGate, waitUntil, warnError, withChecks, withContext, withCredentials, withDockerContainer, withDockerRegistry, withDockerServer, withEnv, withGradle, withVault, wrap, writeFile, ws] or symbols [GitUsernamePassword, agent, all, allBranchesSame, allOf, always, ant, antFromApache, antOutcome, antTarget, any, anyOf, apiToken, apiTokenProperty, architecture, archiveArtifacts, artifactManager, assembla, authorInChangelog, authorizationMatrix, aws, batchFile, bitbucket, bitbucketServer, booleanParam, branch, brokenBuildSuspects, brokenTestsSuspects, browser, buildButton, buildDiscarder, buildDiscarders, buildRetention, buildSingleRevisionOnly, buildUser, buildingTag, caseInsensitive, caseSensitive, certificate, cgit, changeRequest, changelog, changelogBase, changelogToBranch, changeset, checkoutOption, checkoutToSubdirectory, choice, choiceParam, cleanAfterCheckout, cleanBeforeCheckout, cleanWs, clock, cloneOption, command, computerRetentionCheckInterval, configFile, configFileProvider, consoleUrlProvider, contentSecurityPolicy, contributor, cps, credentials, cron, crumb, culprits, dark, darkSystem, default, defaultDisplayUrlProvider, defaultFolderConfiguration, defaultView, demand, developers, disableConcurrentBuilds, disableRestartFromStage, disableResume, discoverOtherRefs, discoverOtherRefsTrait, diskSpace, diskSpaceMonitor, docker, dockerCert, dockerServer, dockerTool, dockerfile, downstream, dumb, durabilityHint, email-ext, envVars, envVarsFilter, environment, equals, executor, experimentalFlags, expression, extendedEmailPublisher, file, fileParam, filePath, fingerprint, fingerprints, firstBuildChangelog, fisheye, folderConfigFiles, frameOptions, freeStyle, freeStyleJob, fromDocker, fromScm, fromSource, git, gitBranchDiscovery, gitHooks, gitHubBranchDiscovery, gitHubBranchHeadAuthority, gitHubExcludeArchivedRepositories, gitHubExcludeForkedRepositories, gitHubExcludePrivateRepositories, gitHubExcludePublicRepositories, gitHubForkDiscovery, gitHubIgnoreDraftPullRequestFilter, gitHubPullRequestDiscovery, gitHubSshCheckout, gitHubTagDiscovery, gitHubTopicsFilter, gitHubTrustContributors, gitHubTrustEveryone, gitHubTrustNobody, gitHubTrustPermissions, gitLab, gitList, gitSCM, gitSource, gitTagDiscovery, gitTool, gitUsernamePassword, gitWeb, gitblit, github, githubProjectProperty, githubPush, gitiles, globalConfigFiles, gogs, gradle, group, hashicorpVault, headRegexFilter, headWildcardFilter, hyperlink, hyperlinkToModels, ignoreOnPush, inbound, inferOwner, inferRepository, inheriting, inheritingGlobal, installSource, isRestartedRun, jdk, jgit, jgitapache, jnlp, jobBuildDiscarder, jobName, junitTestResultStorage, kiln, label, lastDuration, lastFailure, lastGrantedAuthorities, lastStable, lastSuccess, legacy, legacySCM, lfs, list, local, localBranch, localBranchTrait, location, logRotator, loggedInUsersCanDoAnything, mailer, maven, maven3Mojos, mavenErrors, mavenGlobalConfig, mavenMojos, mavenWarnings, modernSCM, multiBranchProjectDisplayNaming, multibranch, myView, namedBranchesDifferent, newContainerPerStage, node, nodeProperties, nodejs, nodejsci, nonInheriting, none, nonresumable, not, organizationFolder, overrideIndexTriggers, paneStatus, parallelsAlwaysFailFast, parameters, password, pattern, perBuildTag, permanent, phabricator, pipeline-model, pipeline-model-docker, pipelineGraphView, pipelineTriggers, plainText, plugin, pollSCM, preserveStashes, previous, prism, projectNamingStrategy, proxy, pruneStaleBranch, pruneStaleTag, pruneTags, queueItemAuthenticator, quietPeriod, rateLimit, rateLimitBuilds, recipients, redmine, refSpecs, remoteName, requestor, resourceRoot, responseTime, retainOnlyVariables, rhodeCode, run, runParam, sSHLauncher, schedule, scmGit, scmRetryCount, scriptApproval, scriptApprovalLink, search, security, shell, simpleBuildDiscarder, skipDefaultCheckout, skipStagesAfterUnstable, slave, sourceRegexFilter, sourceWildcardFilter, sparseCheckout, sparseCheckoutPaths, specificRepositories, ssh, sshUserPrivateKey, standard, status, string, stringParam, submodule, submoduleOption, suppressAutomaticTriggering, suppressFolderAutomaticTriggering, swapSpace, tag, teamFoundation, teamSlugFilter, text, textParam, themeManager, timestamper, timestamperConfig, timezone, tmpSpace, toolLocation, triggeredBy, unsecured, untrusted, upstream, upstreamDevelopers, user, userIdentity, userOrGroup, userSeed, usernameColonPassword, usernamePassword, vaultFile, vaultString, viewgit, viewsTabBar, weather, withAnt, withSonarQubeEnv, workspace, x509ClientCert, zip] or globals [currentBuild, docker, env, params, pipeline, scm]
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.DSL.invokeMethod(DSL.java:223)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsScript.invokeMethod(CpsScript.java:124)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:98)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1225)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1034)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:41)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
-	at PluginClassLoader for script-security//org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:180)
-	at PluginClassLoader for script-security//org.kohsuke.groovy.sandbox.GroovyInterceptor.onMethodCall(GroovyInterceptor.java:23)
-	at PluginClassLoader for script-security//org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:163)
-	at PluginClassLoader for script-security//org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:178)
-	at PluginClassLoader for script-security//org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:182)
-	at PluginClassLoader for script-security//org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:152)
-	at PluginClassLoader for workflow-cps//com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.LoggingInvoker.methodCall(LoggingInvoker.java:124)
-	at WorkflowScript.run(WorkflowScript:20)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.delegateAndExecute(ModelInterpreter.groovy:139)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.executeSingleStage(ModelInterpreter.groovy:633)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.catchRequiredContextForNode(ModelInterpreter.groovy:390)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.executeSingleStage(ModelInterpreter.groovy:632)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.evaluateStage(ModelInterpreter.groovy:292)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.toolsBlock(ModelInterpreter.groovy:521)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.evaluateStage(ModelInterpreter.groovy:280)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.withEnvBlock(ModelInterpreter.groovy:432)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.evaluateStage(ModelInterpreter.groovy:279)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.withCredentialsBlock(ModelInterpreter.groovy:464)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.evaluateStage(ModelInterpreter.groovy:278)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.inDeclarativeAgent(ModelInterpreter.groovy:561)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.evaluateStage(ModelInterpreter.groovy:276)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.stageInput(ModelInterpreter.groovy:354)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.evaluateStage(ModelInterpreter.groovy:265)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.inWrappers(ModelInterpreter.groovy:592)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.evaluateStage(ModelInterpreter.groovy:263)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.withEnvBlock(ModelInterpreter.groovy:432)
-	at org.jenkinsci.plugins.pipeline.modeldefinition.ModelInterpreter.evaluateStage(ModelInterpreter.groovy:258)
-	at ___cps.transform___(Native Method)
-	at PluginClassLoader for workflow-cps//com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:107)
-	at PluginClassLoader for workflow-cps//com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:118)
-	at PluginClassLoader for workflow-cps//com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:87)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at PluginClassLoader for workflow-cps//com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:71)
-	at PluginClassLoader for workflow-cps//com.cloudbees.groovy.cps.impl.ClosureBlock.eval(ClosureBlock.java:49)
-	at PluginClassLoader for workflow-cps//com.cloudbees.groovy.cps.Next.step(Next.java:84)
-	at PluginClassLoader for workflow-cps//com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:142)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$001(SandboxContinuable.java:17)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:48)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:188)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:464)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:372)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:302)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService.lambda$wrap$4(CpsVmExecutorService.java:143)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:139)
-	at jenkins.util.ContextResettingExecutorService.lambda$wrap$0(ContextResettingExecutorService.java:26)
-	at jenkins.security.ImpersonatingExecutorService.lambda$wrap$0(ImpersonatingExecutorService.java:66)
-	at jenkins.util.ErrorLoggingExecutorService.lambda$wrap$0(ErrorLoggingExecutorService.java:51)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$1.call(CpsVmExecutorService.java:53)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$1.call(CpsVmExecutorService.java:50)
-	at org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:136)
-	at org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:275)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService.lambda$categoryThreadFactory$0(CpsVmExecutorService.java:50)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Finished: FAILURE
++ scp -o StrictHostKeyChecking=no -r /var/lib/jenkins/workspace/abc-backend/. ubuntu@52.66.188.69:/home/ubuntu/
+scp: dest open "/home/ubuntu/.git/objects/82/30332831228f064267a384b2c02f795645e00c": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/82/30332831228f064267a384b2c02f795645e00c" to "/home/ubuntu/.git/objects/82/30332831228f064267a384b2c02f795645e00c" failed
+scp: dest open "/home/ubuntu/.git/objects/d4/4d790a7c3208d43b394babe6a10b17470388c0": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/d4/4d790a7c3208d43b394babe6a10b17470388c0" to "/home/ubuntu/.git/objects/d4/4d790a7c3208d43b394babe6a10b17470388c0" failed
+scp: dest open "/home/ubuntu/.git/objects/df/a7f9392ee7f51aca5a862b440e45124a442a6f": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/df/a7f9392ee7f51aca5a862b440e45124a442a6f" to "/home/ubuntu/.git/objects/df/a7f9392ee7f51aca5a862b440e45124a442a6f" failed
+scp: dest open "/home/ubuntu/.git/objects/46/18b287e63f54c2a8d412a7a56958db283f3386": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/46/18b287e63f54c2a8d412a7a56958db283f3386" to "/home/ubuntu/.git/objects/46/18b287e63f54c2a8d412a7a56958db283f3386" failed
+scp: dest open "/home/ubuntu/.git/objects/5a/9175a1ad79a0c1f10dd71098f35f6ffe5af648": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/5a/9175a1ad79a0c1f10dd71098f35f6ffe5af648" to "/home/ubuntu/.git/objects/5a/9175a1ad79a0c1f10dd71098f35f6ffe5af648" failed
+scp: dest open "/home/ubuntu/.git/objects/5a/56002e3302f39438ab175372d547207ef48a31": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/5a/56002e3302f39438ab175372d547207ef48a31" to "/home/ubuntu/.git/objects/5a/56002e3302f39438ab175372d547207ef48a31" failed
+scp: dest open "/home/ubuntu/.git/objects/18/29401b4ee5da95148bc33e13366d8a9b2b5a27": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/18/29401b4ee5da95148bc33e13366d8a9b2b5a27" to "/home/ubuntu/.git/objects/18/29401b4ee5da95148bc33e13366d8a9b2b5a27" failed
+scp: dest open "/home/ubuntu/.git/objects/3a/f97bf440ba48e613375d2a6ac7bcefd55adcff": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/3a/f97bf440ba48e613375d2a6ac7bcefd55adcff" to "/home/ubuntu/.git/objects/3a/f97bf440ba48e613375d2a6ac7bcefd55adcff" failed
+scp: dest open "/home/ubuntu/.git/objects/6b/2528ddc7ae32b9f0b8c5fd34702d32c8f920ee": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/6b/2528ddc7ae32b9f0b8c5fd34702d32c8f920ee" to "/home/ubuntu/.git/objects/6b/2528ddc7ae32b9f0b8c5fd34702d32c8f920ee" failed
+scp: dest open "/home/ubuntu/.git/objects/55/bd66ab3444b5f75454f598f01557199bc00542": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/55/bd66ab3444b5f75454f598f01557199bc00542" to "/home/ubuntu/.git/objects/55/bd66ab3444b5f75454f598f01557199bc00542" failed
+scp: dest open "/home/ubuntu/.git/objects/a6/f33d20a522873b664d64803c05f93f4e290a51": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/a6/f33d20a522873b664d64803c05f93f4e290a51" to "/home/ubuntu/.git/objects/a6/f33d20a522873b664d64803c05f93f4e290a51" failed
+scp: dest open "/home/ubuntu/.git/objects/8d/ec1e59cdb9998a0881b678c3c8e380d38a1a06": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/8d/ec1e59cdb9998a0881b678c3c8e380d38a1a06" to "/home/ubuntu/.git/objects/8d/ec1e59cdb9998a0881b678c3c8e380d38a1a06" failed
+scp: dest open "/home/ubuntu/.git/objects/4b/f5f61c494f0ff9c7e899d04e5d71376151f73f": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/4b/f5f61c494f0ff9c7e899d04e5d71376151f73f" to "/home/ubuntu/.git/objects/4b/f5f61c494f0ff9c7e899d04e5d71376151f73f" failed
+scp: dest open "/home/ubuntu/.git/objects/be/c25791905feff78cf1ced85d4c5c27233b071e": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/be/c25791905feff78cf1ced85d4c5c27233b071e" to "/home/ubuntu/.git/objects/be/c25791905feff78cf1ced85d4c5c27233b071e" failed
+scp: dest open "/home/ubuntu/.git/objects/39/0a41d2c9a346ae3aec9f761236687094fb108d": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/39/0a41d2c9a346ae3aec9f761236687094fb108d" to "/home/ubuntu/.git/objects/39/0a41d2c9a346ae3aec9f761236687094fb108d" failed
+scp: dest open "/home/ubuntu/.git/objects/fc/32bcdd34cd9e9cbec308a73d8161b3e31f4534": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/fc/32bcdd34cd9e9cbec308a73d8161b3e31f4534" to "/home/ubuntu/.git/objects/fc/32bcdd34cd9e9cbec308a73d8161b3e31f4534" failed
+scp: dest open "/home/ubuntu/.git/objects/7c/249ed93541ef5e5db6181ddf7d05b0f093d68d": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/7c/249ed93541ef5e5db6181ddf7d05b0f093d68d" to "/home/ubuntu/.git/objects/7c/249ed93541ef5e5db6181ddf7d05b0f093d68d" failed
+scp: dest open "/home/ubuntu/.git/objects/1f/a63e6a34d03d764adf62cc8b457cc87f7f8372": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/1f/a63e6a34d03d764adf62cc8b457cc87f7f8372" to "/home/ubuntu/.git/objects/1f/a63e6a34d03d764adf62cc8b457cc87f7f8372" failed
+scp: dest open "/home/ubuntu/.git/objects/6a/a4f861989a9d531967b447503a7aa684aac9e2": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/6a/a4f861989a9d531967b447503a7aa684aac9e2" to "/home/ubuntu/.git/objects/6a/a4f861989a9d531967b447503a7aa684aac9e2" failed
+scp: dest open "/home/ubuntu/.git/objects/6a/b17db900a815e93a90ef5cc919c50544169b2c": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/6a/b17db900a815e93a90ef5cc919c50544169b2c" to "/home/ubuntu/.git/objects/6a/b17db900a815e93a90ef5cc919c50544169b2c" failed
+scp: dest open "/home/ubuntu/.git/objects/e3/3ce59ebcc4431032bd8c15e9655b937dcfb316": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/e3/3ce59ebcc4431032bd8c15e9655b937dcfb316" to "/home/ubuntu/.git/objects/e3/3ce59ebcc4431032bd8c15e9655b937dcfb316" failed
+scp: dest open "/home/ubuntu/.git/objects/d0/f351c15ba3b0c2b398c8833dace6663c1381ad": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/d0/f351c15ba3b0c2b398c8833dace6663c1381ad" to "/home/ubuntu/.git/objects/d0/f351c15ba3b0c2b398c8833dace6663c1381ad" failed
+scp: dest open "/home/ubuntu/.git/objects/76/68eebf0a03951f93cbb1dd71ef789ec6ac1f42": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/76/68eebf0a03951f93cbb1dd71ef789ec6ac1f42" to "/home/ubuntu/.git/objects/76/68eebf0a03951f93cbb1dd71ef789ec6ac1f42" failed
+scp: dest open "/home/ubuntu/.git/objects/57/f25d0084c573884454da82ca85d5e375cd599c": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/57/f25d0084c573884454da82ca85d5e375cd599c" to "/home/ubuntu/.git/objects/57/f25d0084c573884454da82ca85d5e375cd599c" failed
+scp: dest open "/home/ubuntu/.git/objects/99/b19d6a75dc537497047cb613064c6f7d6092b7": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/99/b19d6a75dc537497047cb613064c6f7d6092b7" to "/home/ubuntu/.git/objects/99/b19d6a75dc537497047cb613064c6f7d6092b7" failed
+scp: dest open "/home/ubuntu/.git/objects/a3/4b0da4f9c089f269c174d875d0a6bf00783b78": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/a3/4b0da4f9c089f269c174d875d0a6bf00783b78" to "/home/ubuntu/.git/objects/a3/4b0da4f9c089f269c174d875d0a6bf00783b78" failed
+scp: dest open "/home/ubuntu/.git/objects/c7/56588c19e8bc1d84c8a732f860b07727ff341f": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/c7/56588c19e8bc1d84c8a732f860b07727ff341f" to "/home/ubuntu/.git/objects/c7/56588c19e8bc1d84c8a732f860b07727ff341f" failed
+scp: dest open "/home/ubuntu/.git/objects/6f/d4493da16061a226de989f651c7ea7342d1979": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/6f/d4493da16061a226de989f651c7ea7342d1979" to "/home/ubuntu/.git/objects/6f/d4493da16061a226de989f651c7ea7342d1979" failed
+scp: dest open "/home/ubuntu/.git/objects/f4/2d013aa1a65a37270817764266bebf719310e5": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/f4/2d013aa1a65a37270817764266bebf719310e5" to "/home/ubuntu/.git/objects/f4/2d013aa1a65a37270817764266bebf719310e5" failed
+scp: dest open "/home/ubuntu/.git/objects/af/2883f58aa8be7eee5751f94ab0fe9996908e78": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/af/2883f58aa8be7eee5751f94ab0fe9996908e78" to "/home/ubuntu/.git/objects/af/2883f58aa8be7eee5751f94ab0fe9996908e78" failed
+scp: dest open "/home/ubuntu/.git/objects/3f/9f3a09c235a12401d2da26e2962604f67039af": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/3f/9f3a09c235a12401d2da26e2962604f67039af" to "/home/ubuntu/.git/objects/3f/9f3a09c235a12401d2da26e2962604f67039af" failed
+scp: dest open "/home/ubuntu/.git/objects/ff/e0437b0690a29a26f58d169ebf9e021815d126": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/ff/e0437b0690a29a26f58d169ebf9e021815d126" to "/home/ubuntu/.git/objects/ff/e0437b0690a29a26f58d169ebf9e021815d126" failed
+scp: dest open "/home/ubuntu/.git/objects/bc/15c60be73735596b67518eb096e2ea35c537f9": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/bc/15c60be73735596b67518eb096e2ea35c537f9" to "/home/ubuntu/.git/objects/bc/15c60be73735596b67518eb096e2ea35c537f9" failed
+scp: dest open "/home/ubuntu/.git/objects/85/d0b39bec6a1d3b15ebeeedc8d3e3e0d4f3a40a": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/85/d0b39bec6a1d3b15ebeeedc8d3e3e0d4f3a40a" to "/home/ubuntu/.git/objects/85/d0b39bec6a1d3b15ebeeedc8d3e3e0d4f3a40a" failed
+scp: dest open "/home/ubuntu/.git/objects/26/572ff8753c28534fec01d31740ad493700c9fe": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/26/572ff8753c28534fec01d31740ad493700c9fe" to "/home/ubuntu/.git/objects/26/572ff8753c28534fec01d31740ad493700c9fe" failed
+scp: dest open "/home/ubuntu/.git/objects/26/ed3f11fe1233d2e4da5059413fdcd7e5694270": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/26/ed3f11fe1233d2e4da5059413fdcd7e5694270" to "/home/ubuntu/.git/objects/26/ed3f11fe1233d2e4da5059413fdcd7e5694270" failed
+scp: dest open "/home/ubuntu/.git/objects/0f/85f73dbab389b970f1f6e1708f1f69f2989ad4": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/0f/85f73dbab389b970f1f6e1708f1f69f2989ad4" to "/home/ubuntu/.git/objects/0f/85f73dbab389b970f1f6e1708f1f69f2989ad4" failed
+scp: dest open "/home/ubuntu/.git/objects/0f/dd8a081760d35f5eb70b1c141d823513489596": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/0f/dd8a081760d35f5eb70b1c141d823513489596" to "/home/ubuntu/.git/objects/0f/dd8a081760d35f5eb70b1c141d823513489596" failed
+scp: dest open "/home/ubuntu/.git/objects/73/7e7d4b0403e3d08661ea7c265423ad3b63bb7e": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/73/7e7d4b0403e3d08661ea7c265423ad3b63bb7e" to "/home/ubuntu/.git/objects/73/7e7d4b0403e3d08661ea7c265423ad3b63bb7e" failed
+scp: dest open "/home/ubuntu/.git/objects/73/3aabe7296cc8dbd3c19f73ac9781b36e64442e": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/73/3aabe7296cc8dbd3c19f73ac9781b36e64442e" to "/home/ubuntu/.git/objects/73/3aabe7296cc8dbd3c19f73ac9781b36e64442e" failed
+scp: dest open "/home/ubuntu/.git/objects/ca/0ef6a50998e3df25d2263c180100648df52da1": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/ca/0ef6a50998e3df25d2263c180100648df52da1" to "/home/ubuntu/.git/objects/ca/0ef6a50998e3df25d2263c180100648df52da1" failed
+scp: dest open "/home/ubuntu/.git/objects/f0/510ac6838d1b10c86b5be9fcc8753c06be62ca": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/f0/510ac6838d1b10c86b5be9fcc8753c06be62ca" to "/home/ubuntu/.git/objects/f0/510ac6838d1b10c86b5be9fcc8753c06be62ca" failed
+scp: dest open "/home/ubuntu/.git/objects/20/16467adf2b6369842fa40368ebe89ef0f881a7": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/20/16467adf2b6369842fa40368ebe89ef0f881a7" to "/home/ubuntu/.git/objects/20/16467adf2b6369842fa40368ebe89ef0f881a7" failed
+scp: dest open "/home/ubuntu/.git/objects/ab/e2b889bf03b5b3440debf455b349b199ff32db": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/ab/e2b889bf03b5b3440debf455b349b199ff32db" to "/home/ubuntu/.git/objects/ab/e2b889bf03b5b3440debf455b349b199ff32db" failed
+scp: dest open "/home/ubuntu/.git/objects/66/7a832be463c6bac06ff8a7965605c4e49b71cf": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/66/7a832be463c6bac06ff8a7965605c4e49b71cf" to "/home/ubuntu/.git/objects/66/7a832be463c6bac06ff8a7965605c4e49b71cf" failed
+scp: dest open "/home/ubuntu/.git/objects/96/8a8cc5030a3a856fee90991ae1228f91a0328e": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/96/8a8cc5030a3a856fee90991ae1228f91a0328e" to "/home/ubuntu/.git/objects/96/8a8cc5030a3a856fee90991ae1228f91a0328e" failed
+scp: dest open "/home/ubuntu/.git/objects/c3/4a20b5faeb0522a923cac1e8f09f16214d030f": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/c3/4a20b5faeb0522a923cac1e8f09f16214d030f" to "/home/ubuntu/.git/objects/c3/4a20b5faeb0522a923cac1e8f09f16214d030f" failed
+scp: dest open "/home/ubuntu/.git/objects/9e/25033f7b86c4b79cd50eac7935f7d71c1a9d14": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/9e/25033f7b86c4b79cd50eac7935f7d71c1a9d14" to "/home/ubuntu/.git/objects/9e/25033f7b86c4b79cd50eac7935f7d71c1a9d14" failed
+scp: dest open "/home/ubuntu/.git/objects/9e/d45ce14c4a1798f64ce7e8e665d572a3dac4dd": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/9e/d45ce14c4a1798f64ce7e8e665d572a3dac4dd" to "/home/ubuntu/.git/objects/9e/d45ce14c4a1798f64ce7e8e665d572a3dac4dd" failed
+scp: dest open "/home/ubuntu/.git/objects/fa/7044caa9b9767241ea6f00f9932f619973a983": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/fa/7044caa9b9767241ea6f00f9932f619973a983" to "/home/ubuntu/.git/objects/fa/7044caa9b9767241ea6f00f9932f619973a983" failed
+scp: dest open "/home/ubuntu/.git/objects/bd/dcfdf5ac8914b371456a216ad5e266dc02cbad": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/bd/dcfdf5ac8914b371456a216ad5e266dc02cbad" to "/home/ubuntu/.git/objects/bd/dcfdf5ac8914b371456a216ad5e266dc02cbad" failed
+scp: dest open "/home/ubuntu/.git/objects/7b/4e3f1733b738303d9f4c0567dff195e79b5d22": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/7b/4e3f1733b738303d9f4c0567dff195e79b5d22" to "/home/ubuntu/.git/objects/7b/4e3f1733b738303d9f4c0567dff195e79b5d22" failed
+scp: dest open "/home/ubuntu/.git/objects/7b/277e7871d3006686b0c603c0deeef3e2f648ab": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/7b/277e7871d3006686b0c603c0deeef3e2f648ab" to "/home/ubuntu/.git/objects/7b/277e7871d3006686b0c603c0deeef3e2f648ab" failed
+scp: dest open "/home/ubuntu/.git/objects/25/d7c4c41c4a4cdba3bbec9623c5d2d20bed8e45": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/25/d7c4c41c4a4cdba3bbec9623c5d2d20bed8e45" to "/home/ubuntu/.git/objects/25/d7c4c41c4a4cdba3bbec9623c5d2d20bed8e45" failed
+scp: dest open "/home/ubuntu/.git/objects/1d/a7f33486870bca225ae05b7336518ecdaf2c25": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/1d/a7f33486870bca225ae05b7336518ecdaf2c25" to "/home/ubuntu/.git/objects/1d/a7f33486870bca225ae05b7336518ecdaf2c25" failed
+scp: dest open "/home/ubuntu/.git/objects/19/a521c06bb4d2ff221f128ed72f1fc3188bbeba": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/19/a521c06bb4d2ff221f128ed72f1fc3188bbeba" to "/home/ubuntu/.git/objects/19/a521c06bb4d2ff221f128ed72f1fc3188bbeba" failed
+scp: dest open "/home/ubuntu/.git/objects/b5/b6359da4544ad69b8fdfda4475d1c28405485f": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/b5/b6359da4544ad69b8fdfda4475d1c28405485f" to "/home/ubuntu/.git/objects/b5/b6359da4544ad69b8fdfda4475d1c28405485f" failed
+scp: dest open "/home/ubuntu/.git/objects/4a/4fcb80c7b1eb2f9581a8654c8a8417709b6cdf": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/4a/4fcb80c7b1eb2f9581a8654c8a8417709b6cdf" to "/home/ubuntu/.git/objects/4a/4fcb80c7b1eb2f9581a8654c8a8417709b6cdf" failed
+scp: dest open "/home/ubuntu/.git/objects/a2/b979e8c25c5950daea98a637772b7ddee4b889": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/a2/b979e8c25c5950daea98a637772b7ddee4b889" to "/home/ubuntu/.git/objects/a2/b979e8c25c5950daea98a637772b7ddee4b889" failed
+scp: dest open "/home/ubuntu/.git/objects/b9/ca8bb3e35fa8fa020636da70bf19491e2196df": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/b9/ca8bb3e35fa8fa020636da70bf19491e2196df" to "/home/ubuntu/.git/objects/b9/ca8bb3e35fa8fa020636da70bf19491e2196df" failed
+scp: dest open "/home/ubuntu/.git/objects/5c/ab69ab64859f7cdc219eb9c69e7692a51cd1c0": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/5c/ab69ab64859f7cdc219eb9c69e7692a51cd1c0" to "/home/ubuntu/.git/objects/5c/ab69ab64859f7cdc219eb9c69e7692a51cd1c0" failed
+scp: dest open "/home/ubuntu/.git/objects/b1/2d205a76124e890cbb56c3c4ea17b037163951": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/b1/2d205a76124e890cbb56c3c4ea17b037163951" to "/home/ubuntu/.git/objects/b1/2d205a76124e890cbb56c3c4ea17b037163951" failed
+scp: dest open "/home/ubuntu/.git/objects/db/c3d98772da45fca919ca17164abfc4c4f2b5fc": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/db/c3d98772da45fca919ca17164abfc4c4f2b5fc" to "/home/ubuntu/.git/objects/db/c3d98772da45fca919ca17164abfc4c4f2b5fc" failed
+scp: dest open "/home/ubuntu/.git/objects/db/bad702bd5927218f17e10c82b4070a6e9bffb1": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/db/bad702bd5927218f17e10c82b4070a6e9bffb1" to "/home/ubuntu/.git/objects/db/bad702bd5927218f17e10c82b4070a6e9bffb1" failed
+scp: dest open "/home/ubuntu/.git/objects/b8/b83d35ec8eff65205148d67fb1145f5298c2f9": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/b8/b83d35ec8eff65205148d67fb1145f5298c2f9" to "/home/ubuntu/.git/objects/b8/b83d35ec8eff65205148d67fb1145f5298c2f9" failed
+scp: dest open "/home/ubuntu/.git/objects/24/60ff15accddc2170c09f1575117a1fa7ab5ca1": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/24/60ff15accddc2170c09f1575117a1fa7ab5ca1" to "/home/ubuntu/.git/objects/24/60ff15accddc2170c09f1575117a1fa7ab5ca1" failed
+scp: dest open "/home/ubuntu/.git/objects/24/40d5c6af0895461029bfd68c6e1475142a9dfc": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/24/40d5c6af0895461029bfd68c6e1475142a9dfc" to "/home/ubuntu/.git/objects/24/40d5c6af0895461029bfd68c6e1475142a9dfc" failed
+scp: dest open "/home/ubuntu/.git/objects/f6/dda30b5e81e133cd07dde2994d39bc0e6cc94f": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/f6/dda30b5e81e133cd07dde2994d39bc0e6cc94f" to "/home/ubuntu/.git/objects/f6/dda30b5e81e133cd07dde2994d39bc0e6cc94f" failed
+scp: dest open "/home/ubuntu/.git/objects/53/1dc011b3d78f4200b0ecdc47fd58388d0e9790": Permission denied
+scp: upload "/var/lib/jenkins/workspace/abc-backend/./.git/objects/53/1dc011b3d78f4200b0ecdc47fd58388d0e9790" to "/home/ubuntu/.git/objects/53/1dc011b3d78f4200b0ecdc47fd58388d0e9790" failed
+scp: failed to upload directory /var/lib/jenkins/workspace/abc-backend/. to /home/ubuntu/
+[Pipeline] }
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 15297 killed;
