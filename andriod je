@@ -1,0 +1,139 @@
+pipeline {
+    agent any
+ 
+    tools {
+        jdk 'jdk17'      
+    }
+ 
+    environment {
+        S3_BUCKET = 'demo-apk-storage'
+        APK_PATH = 'android/app/build/outputs/apk/release/app-release.apk'
+ 
+        ANDROID_HOME = '/var/lib/jenkins/Android/Sdk'
+ 
+        PATH = "${JAVA_HOME}/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/cmdline-tools/latest/bin:${env.PATH}"
+    }
+ 
+    stages {
+ 
+        stage('1. Checkout') {
+            steps {
+                checkout scmGit(
+                    branches: [[name: '/main']],
+                    extensions: [],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/SubhuJaat07/ophelia-games-app.git'
+                    ]]
+                )
+            }
+        }
+ 
+        stage('2. Verify Environment') {
+            steps {
+                sh '''
+                    echo "JAVA_HOME=$JAVA_HOME"
+                    java -version
+ 
+                    echo "Node Version"
+                    node -v
+ 
+                    echo "NPM Version"
+                    npm -v
+ 
+                    echo "ANDROID_HOME=$ANDROID_HOME"
+                    ls $ANDROID_HOME || echo "Android SDK not found"
+ 
+                    echo "AWS CLI"
+                    aws --version || true
+                '''
+            }
+        }
+ 
+        stage('3. npm install') {
+            steps {
+                sh '''
+                    rm -rf node_modules package-lock.json
+                    npm install
+                '''
+            }
+        }
+ 
+        stage('4. Expo Prebuild') {
+            steps {
+                sh '''
+                    rm -rf android ios
+ 
+                    npx expo install --fix
+ 
+                    npx expo prebuild \
+                        --platform android \
+                        --non-interactive
+ 
+                    sed -i 's/com.android.tools.build:gradle:[0-9.]/com.android.tools.build:gradle:8.1.0/' android/build.gradle
+                '''
+            }
+        }
+ 
+        stage('5. Build Release APK') {
+            steps {
+                sh '''
+                    echo "sdk.dir=$ANDROID_HOME" > android/local.properties
+ 
+                    yes | sdkmanager --licenses >/dev/null 2>&1 || true
+ 
+                    cd android
+ 
+                    chmod +x gradlew
+ 
+                    ./gradlew clean
+ 
+                    ./gradlew assembleRelease --stacktrace
+                '''
+            }
+        }
+ 
+        stage('6. Verify APK') {
+            steps {
+                sh '''
+                    ls -lh ${APK_PATH}
+ 
+                    if [ ! -f "${APK_PATH}" ]; then
+                        echo "APK not generated"
+                        exit 1
+                    fi
+                '''
+            }
+        }
+ 
+        stage('7. Upload APK to S3') {
+            steps {
+                withCredentials([
+                    [
+                        $class: 'AmazonWebServicesCredentialsBinding',
+                        credentialsId: 'aws_apk_cred_demo'
+                    ]
+                ]) {
+                    sh """
+                        aws s3 cp ${APK_PATH} s3://${S3_BUCKET}/releases/app-release-${BUILD_NUMBER}.apk
+ 
+                        aws s3 cp ${APK_PATH} s3://${S3_BUCKET}/latest/app-release.apk
+                    """
+                }
+            }
+        }
+    }
+ 
+    post {
+        success {
+            echo "APK built and uploaded successfully."
+        }
+ 
+        failure {
+            echo "Build failed. Check the logs above."
+        }
+ 
+        always {
+            cleanWs()
+        }
+    }
+} 
